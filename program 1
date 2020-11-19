@@ -1,0 +1,43 @@
+print ("============================ SELAMAT DATANG =============================")
+print("")
+print ("============================= MENU TAKOYAKI =============================")
+print ("==================== VARIAN 1 : GURITA = Rp 2000/pcs ====================")
+print ("================== VARIAN 2 : STIK KEPITING = 2500/pcs ==================")
+print ("=== DISKON 10% JIKA ANDA MEMBELI 10 BUAH ATAU LEBIH TAKOYAKI VARIAN 1 ===")
+print ("==== DISKON 8% JIKA ANDA MEMBELI 8 BUAH ATAU LEBIH TAKOYAKI VARIAN 2 ====")
+def menuutama():
+  print("")
+  varian = int(input("Silahkan pilih varian yang anda inginkan (1 atau 2) : "))
+  if varian == 1 :
+    jumlah1 = int(input("Berapa buah takoyaki yang anda inginkan? "))
+    total1 = jumlah1 * 2000
+    if jumlah1 > 45 :
+      print("MOHON MAAF PEMESANAN TAKOYAKI MELEBIHI KETERSEDIAAN YANG ADA (VARIAN 1 = 45 DAN VARIAN 2 = 40) ")
+      print("MOHON PEMESANAN DIULANG")
+      menuutama()
+    if jumlah1 >= 10 :
+      diskon1 = int(total1)*10/100
+      bayar1 = int(total1) - diskon1
+      print("")
+      print("TOTAL YANG HARUS ANDA BAYAR ADALAH : Rp %s"% bayar1)
+    else :
+      print("")
+      print("TOTAL YANG HARUS ANDA BAYAR ADALAH : Rp %s"% total1)
+  elif varian == 2 :
+    jumlah2 = int(input("Berapa buah takoyaki yang anda inginkan? "))
+    total2 = jumlah2 * 2500
+    if jumlah2 > 40 :
+      print("MOHON MAAF PEMESANAN TAKOYAKI MELEBIHI KETERSEDIAAN YANG ADA (VARIAN 1 = 45 DAN VARIAN 2 = 40) ")
+      print("MOHON PEMESANAN DIULANG")
+      menuutama()
+    if jumlah2 >= 8 :
+      diskon2 = int(total2)*8/100
+      bayar2 = int(total2) - diskon2
+      print("")
+      print("TOTAL YANG HARUS ANDA BAYAR ADALAH : Rp %s"% bayar2)
+    else :
+     print("")
+     print("TOTAL YANG HARUS ANDA BAYAR ADALAH : Rp %s"% total2)
+print("")
+menuutama()
+print("===== TERIMAKASIH DAN SELAMAT MENIKMATI ===== ")
